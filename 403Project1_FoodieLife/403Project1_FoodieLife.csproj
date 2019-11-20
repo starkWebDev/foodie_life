@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RestaurantController.cs" />
     <Compile Include="Controllers\VisitController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -169,6 +170,9 @@
     <Content Include="Views\Visit\ShowVisit.cshtml" />
     <Content Include="Views\Visit\AddVisit.cshtml" />
     <Content Include="Views\Visit\EditVisit.cshtml" />
+    <Content Include="Views\Restaurant\ShowRestaurants.cshtml" />
+    <Content Include="Views\Restaurant\AddRestaurant.cshtml" />
+    <Content Include="Views\Restaurant\EditRestaurant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
