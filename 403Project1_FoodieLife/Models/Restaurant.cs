@@ -8,8 +8,8 @@ namespace _403Project1_FoodieLife.Models
 {
     public class Restaurant
     {
-        [Required]
         [Display(Name = "Restaurant ID")]
+        [Required]
         public int restID { get; set; }
 
         [Required(ErrorMessage = "Please enter a restaurant name.")]
