@@ -1,0 +1,45 @@
+﻿@model IEnumerable<_403Project1_FoodieLife.Models.Restaurant>
+
+@{
+    ViewBag.Title = "ShowRestaurants";
+}
+
+<h2>ShowRestaurants</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddRestaurant")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.restID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restCategory)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.restID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.restName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.restCategory)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditRestaurant", new { sCode = item.restID })
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>
