@@ -1,0 +1,45 @@
+﻿@model IEnumerable<_403Project1_FoodieLife.Models.Visit>
+
+@{
+    ViewBag.Title = "DisplayVisit";
+}
+
+<h2>My Visits</h2>
+
+<p>
+    @Html.ActionLink("Add a visit", "AddVisit")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.restID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restCategory)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.restID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.restName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.restCategory)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
