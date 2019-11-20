@@ -9,8 +9,9 @@ namespace _403Project1_FoodieLife.Models
     public class Restaurant
     {
         [Required]
-        [Display(Name = "Visit ID")]
-        public int restID { get; set; }
+        [Display(Name = "Restaurant ID")]
+        //is this working
+\        public int restID { get; set; }
 
         [Required(ErrorMessage = "Please enter a restaurant name.")]
         [MaxLength(50, ErrorMessage = "50 character limit.")]
