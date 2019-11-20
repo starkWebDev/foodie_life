@@ -1,0 +1,61 @@
+﻿@model IEnumerable<_403Project1_FoodieLife.Models.Visit>
+
+@{
+    ViewBag.Title = "ShowVisit";
+}
+
+<h2>My Visits</h2>
+
+<p>
+    @Html.ActionLink("Add a Visit", "AddVisit")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.visitCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.visitRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.order)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comments)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.visitCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.restName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.visitRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.restLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.order)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comments)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { ivisitCode = item.visitCode }) |
+        </td>
+    </tr>
+}
+
+</table>

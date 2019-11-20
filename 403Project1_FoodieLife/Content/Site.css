@@ -22,3 +22,16 @@ select,
 textarea {
     max-width: 280px;
 }
+
+div .jumbotron {
+    background-image: url('burger-and-vegetables-placed-on-brown-wood-surface-1565982.jpg');
+    background-size: cover;
+    background-position: bottom;
+    height: 700px;
+    color: white;
+}
+
+div .nav navbar-nav {
+    display: inline-block;
+    text-align: center;
+}
