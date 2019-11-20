@@ -9,7 +9,7 @@ namespace _403Project1_FoodieLife.Models
     public class Visit
     {
         [Required]
-        public int visitID { get; set; }
+        public int visitCode { get; set; }
 
         [Required(ErrorMessage = "Please choose a restaurant.")]
         [Display(Name = "Restaurant")]
@@ -18,7 +18,7 @@ namespace _403Project1_FoodieLife.Models
         [Required(ErrorMessage = "Please rate your visit.")]
         [Display(Name = "Rating")]
         [Range(1,5)]
-        public int visitRating { get; set; }
+        public int visitRate { get; set; }
 
         [Required(ErrorMessage = "Please enter a location.")]
         [Display(Name = "Location")]

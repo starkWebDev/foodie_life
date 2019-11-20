@@ -167,7 +167,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Visit\DisplayVisit.cshtml" />
+    <Content Include="Views\Visit\ShowVisit.cshtml" />
     <Content Include="Views\Visit\AddVisit.cshtml" />
     <Content Include="Views\Visit\EditVisit.cshtml" />
     <Content Include="Views\Restaurant\ShowRestaurants.cshtml" />
