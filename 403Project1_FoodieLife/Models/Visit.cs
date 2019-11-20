@@ -9,6 +9,7 @@ namespace _403Project1_FoodieLife.Models
     public class Visit
     {
         [Required]
+        [Display(Name = "Visit ID")]
         public int visitCode { get; set; }
 
         [Required(ErrorMessage = "Please choose a restaurant.")]
