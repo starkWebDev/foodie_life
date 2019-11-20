@@ -10,8 +10,9 @@ namespace _403Project1_FoodieLife.Controllers
     public class VisitController : Controller
     {
         public static List<Visit> lstVisit = new List<Visit>();
+
         // GET: Visit
-        public ActionResult DisplayVisit()
+        public ActionResult ShowVisit()
         {
             return View(lstVisit);
         }
@@ -21,7 +22,7 @@ namespace _403Project1_FoodieLife.Controllers
         [HttpGet]
         public ActionResult AddVisit()
         {
-            
+            //Add dropdown list here!
             return View();
         }
 
@@ -30,6 +31,8 @@ namespace _403Project1_FoodieLife.Controllers
         {
             if (ModelState.IsValid)
             {
+                //autoincrement the visitID
+                myVisit.visitCode = lstVisit.Count() + 1;
                 lstVisit.Add(myVisit);
                 return RedirectToAction("DisplayVisit", "Visit");
             }
@@ -41,24 +44,29 @@ namespace _403Project1_FoodieLife.Controllers
 
         //EDIT VISIT
         [HttpGet]
-        public ActionResult EditVisit()
+        public ActionResult EditVisit(int ivisitCode)
         {
-            return View();
+            Visit oVisit = lstVisit.Find(x => x.visitCode == ivisitCode);
+            return View(oVisit);
         }
 
 
         [HttpPost]
-        public ActionResult EditVisit(Visit myVisit)
+        public ActionResult EditVisit(Visit myModel)
         {
-            if (ModelState.IsValid)
+            var obj = lstVisit.FirstOrDefault(x => x.visitCode == myModel.visitCode);
+
+            if (obj != null)
             {
-                lstVisit.Add(myVisit);
-                return RedirectToAction("DisplayVisit", "Visit");
+                obj.restName = myModel.restName;
+                obj.visitRate = myModel.visitRate;
+                obj.restLocation = myModel.restLocation;
+                obj.order = myModel.order;
+                obj.comments = myModel.comments;
+
             }
-            else
-            {
-                return View(myVisit);
-            }
+
+            return View("DisplayVisit", lstVisit);
         }
 
     }
