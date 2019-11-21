@@ -23,6 +23,7 @@ namespace _403Project1_FoodieLife.Controllers
         public ActionResult AddVisit()
         {
             //Add dropdown list here!
+            ViewBag.Restaurants = RestaurantController.ListRestaurants;
             return View();
         }
 
@@ -34,7 +35,7 @@ namespace _403Project1_FoodieLife.Controllers
                 //autoincrement the visitID
                 myVisit.visitCode = lstVisit.Count() + 1;
                 lstVisit.Add(myVisit);
-                return RedirectToAction("DisplayVisit", "Visit");
+                return RedirectToAction("ShowVisit", "Visit");
             }
             else
             {
@@ -47,6 +48,7 @@ namespace _403Project1_FoodieLife.Controllers
         public ActionResult EditVisit(int ivisitCode)
         {
             Visit oVisit = lstVisit.Find(x => x.visitCode == ivisitCode);
+            ViewBag.Restaurants = RestaurantController.ListRestaurants;
             return View(oVisit);
         }
 
@@ -66,7 +68,7 @@ namespace _403Project1_FoodieLife.Controllers
 
             }
 
-            return View("DisplayVisit", lstVisit);
+            return View("ShowVisit", lstVisit);
         }
 
     }
