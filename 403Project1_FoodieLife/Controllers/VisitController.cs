@@ -29,12 +29,13 @@ namespace _403Project1_FoodieLife.Controllers
         [HttpPost]
         public ActionResult AddVisit(Visit myVisit)
         {
+            //autoincrement the visitCode
+            myVisit.visitCode = lstVisit.Count() + 1;
+
             if (ModelState.IsValid)
             {
-                //autoincrement the visitID
-                myVisit.visitCode = lstVisit.Count() + 1;
                 lstVisit.Add(myVisit);
-                return RedirectToAction("DisplayVisit", "Visit");
+                return RedirectToAction("ShowVisit", "Visit");
             }
             else
             {
@@ -66,7 +67,7 @@ namespace _403Project1_FoodieLife.Controllers
 
             }
 
-            return View("DisplayVisit", lstVisit);
+            return View("ShowVisit", lstVisit);
         }
 
     }
